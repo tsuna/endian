@@ -43,3 +43,27 @@ func TestConversion(t *testing.T) {
 		t.Errorf("Invalid conversion yielded 0x%x", u64)
 	}
 }
+
+func Benchmark16_1000(b *testing.B) {
+	for b.Loop() {
+		for i := 0; i < 1000; i++ {
+			endian.HostToNetUint16(0xAABB)
+		}
+	}
+}
+
+func Benchmark32_1000(b *testing.B) {
+	for b.Loop() {
+		for i := 0; i < 1000; i++ {
+			endian.HostToNetUint32(0xAABBCCDD)
+		}
+	}
+}
+
+func Benchmark64_1000(b *testing.B) {
+	for b.Loop() {
+		for i := 0; i < 1000; i++ {
+			endian.HostToNetUint64(0xAABBCCDDEEFF4288)
+		}
+	}
+}
