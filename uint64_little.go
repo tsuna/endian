@@ -7,6 +7,18 @@
 
 package endian
 
+import _ "unsafe"
+
+//go:linkname netToHostUint64 github.com/tsuna/endian.NetToHostUint64
+func netToHostUint64(n uint64) uint64 {
+	return swapUint64(n)
+}
+
+//go:linkname hostToNetUint64 github.com/tsuna/endian.HostToNetUint64
+func hostToNetUint64(n uint64) uint64 {
+	return swapUint64(n)
+}
+
 // swapUint64 converts a uint16 to network byte order and back.
 func swapUint64(n uint64) uint64 {
 	return ((n & 0x00000000000000FF) << 56) |
