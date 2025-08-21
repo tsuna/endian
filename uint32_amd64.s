@@ -7,16 +7,16 @@
 
 #include "textflag.h"
 
-// func NetToHostUint64(n uint64) uint64
-TEXT ·NetToHostUint64(SB), NOSPLIT, $0
-	MOVQ n+0(FP), AX
-	BSWAPQ AX
-	MOVQ  AX, ret+8(FP)
+// func NetToHostUint32(n uint32) uint32
+TEXT ·NetToHostUint32(SB), NOSPLIT, $0
+	MOVL n+0(FP), AX
+	BSWAPL AX
+	MOVL  AX, ret+8(FP)
 	RET
 
-// func HostToNetUint64(n uint64) uint64
-TEXT ·HostToNetUint64(SB), NOSPLIT, $0
-	MOVQ n+0(FP), AX
-	BSWAPQ AX
-	MOVQ  AX, ret+8(FP)
+// func HostToNetUint32(n uint32) uint32
+TEXT ·HostToNetUint32(SB), NOSPLIT, $0
+	MOVL n+0(FP), AX
+	BSWAPL AX
+	MOVL  AX, ret+8(FP)
 	RET
