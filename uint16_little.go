@@ -3,7 +3,7 @@
 // Use of this source code is governed by the Apache License 2.0
 // that can be found in the COPYING file.
 
-// +build 386 amd64 amd64p32 arm arm64 ppc64le mipsle mips64le mips64p32le
+// +build 386 amd64 amd64p32 arm arm64 ppc64le mipsle mips64le mips64p32le loong64 riscv64
 
 package endian
 
