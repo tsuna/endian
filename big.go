@@ -7,17 +7,34 @@
 
 package endian
 
-// swapUint16 converts a uint16 to network byte order and back.
-func swapUint16(n uint16) uint16 {
+import _ "unsafe"
+
+//go:linkname netToHostUint16 github.com/tsuna/endian.NetToHostUint16
+func netToHostUint16(n uint16) uint16 {
 	return n
 }
 
-// swapUint32 converts a uint16 to network byte order and back.
-func swapUint32(n uint32) uint32 {
+//go:linkname hostToNetUint16 github.com/tsuna/endian.HostToNetUint16
+func hostToNetUint16(n uint16) uint16 {
 	return n
 }
 
-// swapUint64 converts a uint16 to network byte order and back.
-func swapUint64(n uint64) uint64 {
+//go:linkname netToHostUint32 github.com/tsuna/endian.NetToHostUint32
+func netToHostUint32(n uint32) uint32 {
+	return n
+}
+
+//go:linkname hostToNetUint32 github.com/tsuna/endian.HostToNetUint32
+func hostToNetUint32(n uint32) uint32 {
+	return n
+}
+
+//go:linkname netToHostUint64 github.com/tsuna/endian.NetToHostUint64
+func netToHostUint64(n uint64) uint64 {
+	return n
+}
+
+//go:linkname hostToNetUint64 github.com/tsuna/endian.HostToNetUint64
+func hostToNetUint64(n uint64) uint64 {
 	return n
 }
